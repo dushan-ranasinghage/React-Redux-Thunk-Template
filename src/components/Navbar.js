@@ -8,7 +8,7 @@ import {
 
 import img from '../logo.svg'
 
-export default function Navbar() {
+export default function NavBar() {
     return(
         <Menu fixed='top' inverted>
             <Container>

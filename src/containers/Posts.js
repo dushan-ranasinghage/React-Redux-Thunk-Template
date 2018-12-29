@@ -5,13 +5,13 @@ import {
   Button
 } from 'semantic-ui-react'
 
-import Navbar from '../components/Navbar';
+import NavBar from '../components/NavBar';
 
 class Posts extends Component {
   render() {
     return (
         <div>
-            <Navbar />
+            <NavBar />
 
             <Container text style={{ marginTop: '7em' }}>
                 <Header as='h1'>Semantic UI React Thunk Template</Header>
@@ -19,6 +19,7 @@ class Posts extends Component {
                 <p>
                     A text container is used for the main container, which is useful for single column layouts.
                 </p>
+                
                 <Button primary>Fetch</Button>
 
             </Container>
