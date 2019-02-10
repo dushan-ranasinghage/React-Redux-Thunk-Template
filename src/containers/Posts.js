@@ -5,7 +5,8 @@ import {
   Button
 } from 'semantic-ui-react'
 import { connect } from "react-redux";
-import { postsActions } from '../actions/';
+import { bindActionCreators } from 'redux';
+import {getPostData} from '../actions/index'
 import { withRouter } from 'react-router-dom';
 
 
@@ -23,7 +24,7 @@ class Posts extends Component {
     fetchData = () => {
         debugger
         this.setState({loading: true})
-        this.props.getPostsData()
+        this.props.getPostData()
     }
   render() {
       console.log("Props",this.props);
@@ -36,7 +37,10 @@ class Posts extends Component {
                 </p>
                 
                 <Button primary onClick={this.fetchData}>Fetch</Button>
-
+                <br />
+                {this.props && this.props.PostList && this.props.PostList.map((item,i)=>
+                    <li key={i}>{item.title}</li>
+                )}
             </Container>
     );
   }
@@ -47,4 +51,10 @@ function mapStateToProps(state) {
     };
 }
 
-export default withRouter(connect(mapStateToProps, postsActions)(Posts))
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({
+      getPostData
+    },dispatch)
+  }
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Posts))
