@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import {GET_POSTS} from './EndPoints'
+import { GET_POSTS } from './EndPoints'
 
 export function getPostData(){
     return (dispatch) => {

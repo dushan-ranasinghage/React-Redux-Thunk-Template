@@ -35,7 +35,6 @@ class Posts extends Component {
                 <p>
                     A text container is used for the main container, which is useful for single column layouts.
                 </p>
-                
                 <Button primary onClick={this.fetchData}>Fetch</Button>
                 <br />
                 {this.props && this.props.PostList && this.props.PostList.map((item,i)=>
