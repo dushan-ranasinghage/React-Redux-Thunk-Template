@@ -9,7 +9,6 @@ import { bindActionCreators } from 'redux';
 import { getPostData } from '../actions/index'
 import { withRouter } from 'react-router-dom';
 
-
 class Posts extends Component {
 
   state = {
@@ -37,7 +36,7 @@ class Posts extends Component {
                 </p>
         <Button primary onClick={this.fetchData}>Fetch</Button>
         <br />
-        {this.props && this.props.PostList && this.props.PostList.map((item, i) =>
+        {this.props && this.props.postlist && this.props.postlist.map((item, i) =>
           <li key={i}>{item.title}</li>
         )}
       </Container>

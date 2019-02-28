@@ -20,10 +20,10 @@ class App extends Component {
     return (
       <Provider store={store}>
         <HashRouter>
-          <div>
+          <React.Fragment>
             <NavBar />
             <Posts />
-          </div>
+          </React.Fragment>
         </HashRouter>
       </Provider>
     );
